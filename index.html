@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Convite interativo de aniversário da Olívia com confirmação de presença."
+    />
+    <title>Aniversário da Olívia</title>
+    <link rel="preload" href="assets/convite.png" as="image" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="inicio" aria-label="Convite de aniversário da Olívia">
+        <div class="hero__shade" aria-hidden="true"></div>
+
+        <a class="scroll-cue" href="#fotos" aria-label="Ir para as fotos">
+          <span>Arraste para baixo</span>
+          <span class="scroll-cue__arrow" aria-hidden="true"></span>
+        </a>
+      </section>
+
+      <section class="section photos reveal" id="fotos" aria-labelledby="photos-title">
+        <div class="section__eyebrow">Galeria</div>
+        <h1 id="photos-title">Momentos da Olívia</h1>
+        <p class="section__intro">
+          Uma pequena prévia do brilho que vamos celebrar juntos.
+        </p>
+
+        <div class="photo-track" aria-label="Fotos da aniversariante">
+          <article class="photo-card">
+            <img data-photo-index="0" src="assets/foto1.jpg" alt="Foto 1 da Olívia" />
+          </article>
+          <article class="photo-card">
+            <img data-photo-index="1" src="assets/foto2.jpg" alt="Foto 2 da Olívia" />
+          </article>
+          <article class="photo-card">
+            <img data-photo-index="2" src="assets/foto3.jpg" alt="Foto 3 da Olívia" />
+          </article>
+        </div>
+      </section>
+
+      <section class="section rsvp reveal" id="confirmacao" aria-labelledby="rsvp-title">
+        <div class="event-strip" aria-label="Informações do evento">
+          <span data-event-date>Data a confirmar</span>
+          <span aria-hidden="true">•</span>
+          <span data-event-place>Local a confirmar</span>
+        </div>
+
+        <div class="rsvp-panel">
+          <div class="section__eyebrow">Confirmação</div>
+          <h2 id="rsvp-title">Confirme sua presença</h2>
+
+          <form class="rsvp-form" id="rsvpForm" novalidate>
+            <label for="guestName">Nome completo</label>
+            <input
+              id="guestName"
+              name="nome"
+              type="text"
+              autocomplete="name"
+              placeholder="Digite seu nome"
+              required
+            />
+
+            <button class="gold-button" type="submit" id="submitButton">
+              Confirmar presença
+            </button>
+
+            <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
