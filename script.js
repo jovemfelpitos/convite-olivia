@@ -6,7 +6,15 @@ const SITE_CONFIG = {
   data: "04/07/2026 - 20:00",
   local: "Guarulhos - SP",
   imagemConvite: "assets/convite.png",
-  fotos: ["assets/foto1.jpg", "assets/foto2.jpg", "assets/foto3.jpg"],
+};
+
+const INVITE_CHAPTERS = {
+  noite:
+    "Dia 04/07/2026, às 20h, a festa começa em Guarulhos - SP. Chegue com o coração leve: a noite foi preparada para ser inesquecível.",
+  salao:
+    "Imagine um salão âmbar, detalhes dourados, risadas no ar e uma mesa pronta para receber quem faz parte da história da Olívia.",
+  brinde:
+    "O presente mais bonito é ter você por perto. Confirme seu nome e venha brindar esse novo capítulo com a gente.",
 };
 
 const form = document.querySelector("#rsvpForm");
@@ -17,6 +25,7 @@ const formMessage = document.querySelector("#formMessage");
 document.addEventListener("DOMContentLoaded", () => {
   applySiteConfig();
   initScrollReveal();
+  initInviteChapters();
   initRsvpForm();
 });
 
@@ -26,17 +35,12 @@ function applySiteConfig() {
     `url("${SITE_CONFIG.imagemConvite}")`
   );
 
-  document.querySelector("[data-event-date]").textContent = SITE_CONFIG.data;
-  document.querySelector("[data-event-place]").textContent = SITE_CONFIG.local;
+  document.querySelectorAll("[data-event-date]").forEach((item) => {
+    item.textContent = SITE_CONFIG.data;
+  });
 
-  document.querySelectorAll("[data-photo-index]").forEach((image) => {
-    const index = Number(image.dataset.photoIndex);
-    const source = SITE_CONFIG.fotos[index];
-
-    if (source) {
-      image.src = source;
-      image.alt = `Foto ${index + 1} da ${SITE_CONFIG.nomeAniversariante}`;
-    }
+  document.querySelectorAll("[data-event-place]").forEach((item) => {
+    item.textContent = SITE_CONFIG.local;
   });
 }
 
@@ -61,6 +65,34 @@ function initScrollReveal() {
   );
 
   revealItems.forEach((item) => observer.observe(item));
+}
+
+function initInviteChapters() {
+  const buttons = document.querySelectorAll("[data-invite-key]");
+  const chapterText = document.querySelector("#inviteChapterText");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const key = button.dataset.inviteKey;
+      const text = INVITE_CHAPTERS[key];
+
+      if (!text) {
+        return;
+      }
+
+      buttons.forEach((item) => {
+        const isCurrent = item === button;
+        item.classList.toggle("is-active", isCurrent);
+        item.setAttribute("aria-selected", String(isCurrent));
+      });
+
+      chapterText.classList.remove("is-changing");
+      requestAnimationFrame(() => {
+        chapterText.textContent = text;
+        chapterText.classList.add("is-changing");
+      });
+    });
+  });
 }
 
 function initRsvpForm() {

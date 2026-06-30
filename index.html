@@ -16,37 +16,87 @@
       <section class="hero" id="inicio" aria-label="Convite de aniversário da Olívia">
         <div class="hero__shade" aria-hidden="true"></div>
 
-        <a class="scroll-cue" href="#fotos" aria-label="Ir para as fotos">
+        <a class="scroll-cue" href="#convite" aria-label="Ir para o convite">
           <span>Arraste para baixo</span>
           <span class="scroll-cue__arrow" aria-hidden="true"></span>
         </a>
       </section>
 
-      <section class="section photos reveal" id="fotos" aria-labelledby="photos-title">
-        <div class="section__eyebrow">Galeria</div>
-        <h1 id="photos-title">Momentos da Olívia</h1>
+      <section class="section invite reveal" id="convite" aria-labelledby="invite-title">
+        <div class="section__eyebrow">Convite especial</div>
+        <h1 id="invite-title">Uma noite dourada para celebrar a Olívia</h1>
         <p class="section__intro">
-          Uma pequena prévia do brilho que vamos celebrar juntos.
+          As luzes se acendem, o salão ganha música e cada convidado vira parte
+          dessa festa feita de brilho, encanto e alegria.
         </p>
 
-        <div class="photo-track" aria-label="Fotos da aniversariante">
-          <article class="photo-card">
-            <img data-photo-index="0" src="assets/foto1.jpg" alt="Foto 1 da Olívia" />
+        <div class="invite-layout">
+          <article class="invitation-card" aria-label="Mensagem do convite">
+            <div class="deco-mark" aria-hidden="true"></div>
+            <p class="script-line">Você é nosso convidado de honra</p>
+            <p class="invite-copy">
+              A Olívia vai comemorar seu aniversário em uma noite com clima de
+              baile vintage, dourado reluzindo e aquele charme de festa elegante.
+              Venha brindar, sorrir e deixar essa lembrança ainda mais bonita.
+            </p>
+
+            <div class="chapter-tabs" role="tablist" aria-label="Detalhes do convite">
+              <button
+                class="chapter-button is-active"
+                type="button"
+                data-invite-key="noite"
+                aria-selected="true"
+              >
+                A noite
+              </button>
+              <button
+                class="chapter-button"
+                type="button"
+                data-invite-key="salao"
+                aria-selected="false"
+              >
+                O salão
+              </button>
+              <button
+                class="chapter-button"
+                type="button"
+                data-invite-key="brinde"
+                aria-selected="false"
+              >
+                O brinde
+              </button>
+            </div>
+
+            <p class="chapter-text" id="inviteChapterText">
+              Dia 04/07/2026, às 20h, a festa começa em Guarulhos - SP. Chegue
+              com o coração leve: a noite foi preparada para ser inesquecível.
+            </p>
+
+            <a class="gold-button invite-cta" href="#confirmacao">Confirmar presença</a>
           </article>
-          <article class="photo-card">
-            <img data-photo-index="1" src="assets/foto2.jpg" alt="Foto 2 da Olívia" />
-          </article>
-          <article class="photo-card">
-            <img data-photo-index="2" src="assets/foto3.jpg" alt="Foto 3 da Olívia" />
-          </article>
+
+          <div class="event-notes" aria-label="Detalhes da celebração">
+            <p>
+              <strong>Quando</strong>
+              <span data-event-date>04/07/2026 - 20:00</span>
+            </p>
+            <p>
+              <strong>Onde</strong>
+              <span data-event-place>Guarulhos - SP</span>
+            </p>
+            <p>
+              <strong>Clima</strong>
+              <span>Festa glamourosa, elegante e cheia de encanto.</span>
+            </p>
+          </div>
         </div>
       </section>
 
       <section class="section rsvp reveal" id="confirmacao" aria-labelledby="rsvp-title">
         <div class="event-strip" aria-label="Informações do evento">
-          <span data-event-date>Data a confirmar</span>
+          <span data-event-date>04/07/2026 - 20:00</span>
           <span aria-hidden="true">•</span>
-          <span data-event-place>Local a confirmar</span>
+          <span data-event-place>Guarulhos - SP</span>
         </div>
 
         <div class="rsvp-panel">

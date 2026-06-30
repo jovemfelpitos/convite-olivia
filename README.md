@@ -6,9 +6,8 @@ Landing page interativa, responsiva e mobile first para confirmação de presen�
 
 - `index.html`: estrutura da página.
 - `style.css`: visual Art Déco, animações e responsividade.
-- `script.js`: configurações do convite e envio para Google Sheets.
+- `script.js`: configurações do convite, texto interativo e envio para Google Sheets.
 - `assets/convite.png`: imagem principal do convite.
-- `assets/foto1.jpg`, `assets/foto2.jpg`, `assets/foto3.jpg`: fotos da aniversariante.
 - `google-apps-script.gs`: código para colar no Apps Script.
 
 ## Trocas rápidas
@@ -20,14 +19,15 @@ const GOOGLE_SCRIPT_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
 
 const SITE_CONFIG = {
   nomeAniversariante: "Olívia",
-  data: "Data a confirmar",
-  local: "Local a confirmar",
+  data: "04/07/2026 - 20:00",
+  local: "Guarulhos - SP",
   imagemConvite: "assets/convite.png",
-  fotos: ["assets/foto1.jpg", "assets/foto2.jpg", "assets/foto3.jpg"],
 };
 ```
 
-Para trocar as imagens, substitua os arquivos dentro da pasta `assets` mantendo os mesmos nomes, ou atualize os caminhos em `SITE_CONFIG`.
+Para trocar a imagem principal, substitua `assets/convite.png` mantendo o mesmo nome, ou atualize o caminho em `SITE_CONFIG`.
+
+O texto interativo fica em `INVITE_CHAPTERS`, também no `script.js`.
 
 ## Google Sheets
 
