@@ -1,80 +1,31 @@
-# Convite de Aniversário da Olívia
+# Convite Olivia
 
-Landing page interativa, responsiva e mobile first para confirmação de presença no aniversário da Olívia.
+Landing page interativa em Next.js para o aniversário de 19 anos da Olivia.
 
-## Arquivos principais
+## Rodar localmente
 
-- `index.html`: estrutura da página.
-- `style.css`: visual Art Déco, animações e responsividade.
-- `script.js`: configurações do convite, texto interativo e envio para Google Sheets.
-- `assets/convite.png`: imagem principal do convite.
-- `google-apps-script.gs`: código para colar no Apps Script.
-
-## Trocas rápidas
-
-No arquivo `script.js`, altere:
-
-```js
-const GOOGLE_SCRIPT_URL = "COLE_AQUI_A_URL_DO_APPS_SCRIPT";
-
-const SITE_CONFIG = {
-  nomeAniversariante: "Olívia",
-  data: "04/07/2026 - 20:00",
-  local: "Guarulhos - SP",
-  imagemConvite: "assets/convite.png",
-};
+```bash
+npm install
+npm run dev
 ```
 
-Para trocar a imagem principal, substitua `assets/convite.png` mantendo o mesmo nome, ou atualize o caminho em `SITE_CONFIG`.
+## RSVP com Google Sheets
 
-O texto interativo fica em `INVITE_CHAPTERS`, também no `script.js`.
+Configure o Apps Script publicado como Web App em `.env.local`:
 
-## Google Sheets
-
-1. Crie uma planilha no Google Sheets.
-2. Na primeira linha, crie as colunas:
-
-```text
-Nome | Data de confirmação
+```bash
+NEXT_PUBLIC_RSVP_ENDPOINT=https://script.google.com/macros/s/SEU_ID/exec
+NEXT_PUBLIC_RSVP_REQUEST_MODE=no-cors
 ```
 
-3. Acesse `Extensões > Apps Script`.
-4. Apague o conteúdo inicial e cole este código:
+O payload enviado é:
 
-```js
-function doPost(e) {
-  const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-  const data = JSON.parse(e.postData.contents);
-
-  sheet.appendRow([
-    data.nome,
-    new Date()
-  ]);
-
-  return ContentService
-    .createTextOutput(JSON.stringify({ status: "success" }))
-    .setMimeType(ContentService.MimeType.JSON);
+```json
+{
+  "name": "Nome do convidado",
+  "event": "Olivia's Birthday",
+  "confirmedAt": "2026-06-30T00:00:00.000Z"
 }
 ```
 
-5. Clique em `Implantar > Nova implantação`.
-6. Escolha o tipo `App da Web`.
-7. Em `Executar como`, selecione você.
-8. Em `Quem pode acessar`, selecione `Qualquer pessoa`.
-9. Clique em `Implantar` e autorize as permissões.
-10. Copie a URL do Web App.
-11. Cole a URL no topo do `script.js`:
-
-```js
-const GOOGLE_SCRIPT_URL = "SUA_URL_AQUI";
-```
-
-## Subir no GitHub Pages
-
-1. Crie um repositório no GitHub.
-2. Envie estes arquivos para o repositório.
-3. No GitHub, acesse `Settings > Pages`.
-4. Em `Build and deployment`, selecione a branch principal e a pasta raiz.
-5. Salve e aguarde a URL publicada.
-
-O mesmo projeto também pode ser enviado para Netlify ou Vercel como site estático.
+Para adicionar música, coloque o arquivo em `public/audio/magia.mp3`.
