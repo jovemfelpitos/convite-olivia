@@ -1,29 +1,28 @@
 "use client";
 
+import Image from "next/image";
 import { Reveal } from "@/components/sections/Reveal";
 import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 export function WelcomeStory() {
   return (
-    <section className="relative flex min-h-[92svh] items-center overflow-hidden px-5 py-20">
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden px-4 py-14 sm:px-5 sm:py-20">
       <StorySilhouettes variant="story" />
-      <Reveal className="relative z-10 mx-auto w-full max-w-2xl rounded-[8px] p-7 text-center sm:p-10 glass-panel">
-        <p className="soft-text mx-auto max-w-xl text-lg font-light leading-9 text-cream/92 sm:text-xl">
-          Há histórias que começam com um &quot;Era uma vez&quot;...
-        </p>
-        <p className="soft-text mx-auto mt-5 max-w-xl text-lg font-light leading-9 text-cream/92 sm:text-xl">
-          Outras começam com um convite.
-        </p>
-        <p className="soft-text mx-auto mt-5 max-w-xl text-base leading-8 text-ivory/84 sm:text-lg">
-          E esta noite só estará completa com você.
-        </p>
-        <div className="gold-line mx-auto my-8" />
-        <h2 className="title-script text-6xl font-semibold leading-none text-ivory sm:text-7xl">
-          Olivia
-        </h2>
-        <p className="mt-3 text-sm font-medium uppercase tracking-[0.24em] text-gold">
-          19 anos
-        </p>
+      <Reveal className="story-card-art-wrap relative z-10 mx-auto">
+        <span className="sr-only">
+          Há histórias que começam com um Era uma vez. Outras começam com um convite.
+          E esta noite só estará completa com você. Olivia, 19 anos.
+        </span>
+        <Image
+          alt=""
+          className="story-card-art"
+          draggable={false}
+          height={1372}
+          sizes="(max-width: 768px) 94vw, 42rem"
+          src="/images/cartinha.png"
+          unoptimized
+          width={1146}
+        />
       </Reveal>
     </section>
   );

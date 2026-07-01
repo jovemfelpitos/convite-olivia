@@ -207,6 +207,22 @@ input {
   object-fit: contain;
 }
 
+.story-card-art-wrap {
+  width: min(94vw, 42rem, 68svh);
+  filter:
+    drop-shadow(0 0 1.1rem rgba(199, 165, 91, 0.2))
+    drop-shadow(0 1.2rem 2.8rem rgba(7, 21, 15, 0.56));
+}
+
+.story-card-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(199, 165, 91, 0.38);
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 .detail-card {
   min-height: 7.5rem;
 }
@@ -608,6 +624,10 @@ input {
 @media (max-width: 640px) {
   .hero-logo-title {
     width: min(94vw, 22.5rem);
+  }
+
+  .story-card-art-wrap {
+    width: min(95vw, 65svh);
   }
 
   .story-silhouette svg {
