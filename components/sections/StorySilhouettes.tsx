@@ -32,17 +32,17 @@ function Silhouette({ className, delay = 0, children }: SilhouetteProps) {
   );
 }
 
-function PrincessSilhouette() {
+function PrincessFrog() {
   return (
-    <div className="real-princess-silhouette-scene">
+    <div className="real-princess-frog-scene">
       <Image
         alt=""
         draggable={false}
-        height={858}
-        sizes="(max-width: 768px) 38vw, 15rem"
-        src="/images/princess-silhouette.png"
+        height={1024}
+        sizes="(max-width: 768px) 46vw, 15rem"
+        src="/images/sapinha.png"
         unoptimized
-        width={728}
+        width={1536}
       />
     </div>
   );
@@ -121,7 +121,7 @@ export function StorySilhouettes({ variant }: StorySilhouettesProps) {
       {variant === "hero" && (
         <>
           <Silhouette className="hero-frog" delay={3.15}>
-            <PrincessSilhouette />
+            <PrincessFrog />
           </Silhouette>
           <Silhouette className="hero-gown" delay={3.45}>
             <GownFigure />
@@ -170,7 +170,7 @@ export function StorySilhouettes({ variant }: StorySilhouettesProps) {
 
       {variant === "rsvp" && (
         <Silhouette className="rsvp-frog" delay={0.18}>
-          <PrincessSilhouette />
+          <PrincessFrog />
         </Silhouette>
       )}
     </div>
