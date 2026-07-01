@@ -192,7 +192,7 @@ input {
 
 .hero-logo-title {
   position: relative;
-  width: min(92vw, 44rem);
+  width: min(82vw, 35rem);
   max-width: 100%;
   margin-inline: auto;
   filter:
@@ -218,13 +218,11 @@ input {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid rgba(199, 165, 91, 0.38);
-  border-radius: 8px;
   object-fit: contain;
 }
 
 .date-time-scene-wrap {
-  width: min(94vw, 52rem);
+  width: min(76vw, 41.6rem);
   margin-inline: auto;
   filter:
     drop-shadow(0 0 1.1rem rgba(199, 165, 91, 0.16))
@@ -234,8 +232,6 @@ input {
 .date-time-scene {
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(199, 165, 91, 0.42);
-  border-radius: 8px;
   background:
     radial-gradient(ellipse at 52% 58%, rgba(199, 165, 91, 0.14), transparent 65%),
     rgba(7, 21, 15, 0.62);
@@ -253,17 +249,6 @@ input {
     linear-gradient(180deg, rgba(7, 21, 15, 0.18), rgba(7, 21, 15, 0.06) 42%, rgba(7, 21, 15, 0.34));
 }
 
-.date-time-scene::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset: auto 6% 4%;
-  z-index: 2;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(199, 165, 91, 0.52), transparent);
-  opacity: 0.78;
-}
-
 .date-time-scene-image {
   display: block;
   width: 100%;
@@ -273,6 +258,14 @@ input {
     saturate(0.88)
     brightness(0.84)
     contrast(1.04);
+}
+
+.venue-address {
+  max-width: 50rem;
+  margin-inline: auto;
+  text-shadow:
+    0 0 1rem rgba(199, 165, 91, 0.2),
+    0 1rem 2.3rem rgba(7, 21, 15, 0.72);
 }
 
 .detail-card {
@@ -405,49 +398,6 @@ input {
   mask-image:
     radial-gradient(ellipse at 70% 43%, #000 0 32%, rgba(0, 0, 0, 0.92) 46%, transparent 74%),
     linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.8) 15%, #000 43%, #000 86%, transparent 100%);
-  mask-composite: intersect;
-}
-
-.real-princess-frog-scene {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  isolation: isolate;
-}
-
-.real-princess-frog-scene::before {
-  content: "";
-  position: absolute;
-  inset: 13% 18% 10%;
-  border-radius: 999px;
-  background:
-    radial-gradient(circle at 52% 35%, rgba(255, 224, 91, 0.26), transparent 31%),
-    radial-gradient(ellipse at 50% 58%, rgba(138, 167, 122, 0.2), transparent 66%);
-  filter: blur(16px);
-  opacity: 0.86;
-}
-
-.real-princess-frog-scene img {
-  position: relative;
-  z-index: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0.96;
-  mix-blend-mode: screen;
-  filter:
-    saturate(0.94)
-    brightness(0.94)
-    contrast(1.02)
-    drop-shadow(0 0 1rem rgba(199, 165, 91, 0.28))
-    drop-shadow(0 0.9rem 1.8rem rgba(7, 21, 15, 0.42));
-  -webkit-mask-image:
-    radial-gradient(ellipse at 50% 50%, #000 0 34%, rgba(0, 0, 0, 0.94) 48%, transparent 74%),
-    linear-gradient(180deg, transparent 0%, #000 17%, #000 79%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    radial-gradient(ellipse at 50% 50%, #000 0 34%, rgba(0, 0, 0, 0.94) 48%, transparent 74%),
-    linear-gradient(180deg, transparent 0%, #000 17%, #000 79%, transparent 100%);
   mask-composite: intersect;
 }
 
@@ -675,7 +625,7 @@ input {
 
 @media (max-width: 640px) {
   .hero-logo-title {
-    width: min(94vw, 22.5rem);
+    width: min(80vw, 18rem);
   }
 
   .story-card-art-wrap {
@@ -683,11 +633,11 @@ input {
   }
 
   .date-time-scene-wrap {
-    width: min(96vw, 35rem);
+    width: min(77vw, 28rem);
   }
 
   .date-time-scene-image {
-    min-height: 17rem;
+    min-height: 13.6rem;
     object-fit: cover;
     object-position: center;
   }

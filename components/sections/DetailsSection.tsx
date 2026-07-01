@@ -1,23 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { MapPin, Route } from "lucide-react";
+import { Route } from "lucide-react";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/sections/Reveal";
 import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
-
-const locationDetails = [
-  {
-    icon: MapPin,
-    label: "Local",
-    value: "Rua Joaquim da Silva Frade, 128"
-  },
-  {
-    icon: MapPin,
-    label: "Bairro",
-    value: "Parque Renato Maia, Guarulhos"
-  }
-];
 
 const mapsUrl =
   "https://www.google.com/maps/search/?api=1&query=Rua%20Joaquim%20da%20Silva%20Frade%2C%20128%2C%20Parque%20Renato%20Maia%2C%20Guarulhos";
@@ -52,7 +39,7 @@ export function DetailsSection() {
               className="date-time-scene-image"
               draggable={false}
               height={1024}
-              sizes="(max-width: 768px) 94vw, 52rem"
+              sizes="(max-width: 768px) 76vw, 42rem"
               src="/images/date-time-scene.png"
               unoptimized
               width={1536}
@@ -60,33 +47,11 @@ export function DetailsSection() {
           </motion.div>
         </Reveal>
 
-        <div className="mt-7 grid gap-4 sm:grid-cols-2">
-          {locationDetails.map((detail, index) => {
-            const Icon = detail.icon;
-
-            return (
-              <Reveal delay={0.16 + index * 0.08} key={detail.label}>
-                <motion.div
-                  className="detail-card flex h-full items-start gap-4 rounded-[8px] p-5 glass-panel"
-                  whileHover={{ y: -4, borderColor: "rgba(199, 165, 91, 0.72)" }}
-                  transition={{ duration: 0.25 }}
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-gold/40 bg-gold/12 text-gold">
-                    <Icon size={20} />
-                  </div>
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-sage">
-                      {detail.label}
-                    </p>
-                    <p className="mt-2 text-base leading-7 text-cream sm:text-lg">
-                      {detail.value}
-                    </p>
-                  </div>
-                </motion.div>
-              </Reveal>
-            );
-          })}
-        </div>
+        <Reveal className="mt-7 text-center" delay={0.16}>
+          <h3 className="venue-address title-script soft-text text-2xl leading-tight text-ivory sm:text-4xl">
+            Rua Joaquim da Silva Frade, 128 - Parque Renato Maia, Guarulhos
+          </h3>
+        </Reveal>
 
         <Reveal className="mt-8 flex justify-center" delay={0.18}>
           <a

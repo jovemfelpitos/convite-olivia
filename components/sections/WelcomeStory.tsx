@@ -17,11 +17,11 @@ export function WelcomeStory() {
           alt=""
           className="story-card-art"
           draggable={false}
-          height={1372}
+          height={1178}
           sizes="(max-width: 768px) 94vw, 42rem"
           src="/images/cartinha.png"
           unoptimized
-          width={1146}
+          width={954}
         />
       </Reveal>
     </section>

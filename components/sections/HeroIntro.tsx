@@ -39,12 +39,12 @@ export function HeroIntro({ ready }: HeroIntroProps) {
           <Image
             alt=""
             draggable={false}
-            height={853}
+            height={1024}
             priority
-            sizes="(max-width: 768px) 92vw, 44rem"
+            sizes="(max-width: 768px) 78vw, 35rem"
             src="/images/title-logo.png"
             unoptimized
-            width={1438}
+            width={1536}
           />
         </motion.h1>
         <motion.div
