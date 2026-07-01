@@ -5,6 +5,7 @@ import { CheckCircle2, Send, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
 import { sendRsvp } from "@/lib/rsvp";
 import { Reveal } from "@/components/sections/Reveal";
+import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 type Firefly = {
   id: number;
@@ -44,7 +45,8 @@ export function RsvpSection({ fireflies }: RsvpSectionProps) {
 
   return (
     <section className="relative flex min-h-[95svh] items-center px-5 py-24">
-      <Reveal className="relative mx-auto w-full max-w-2xl overflow-hidden rounded-[8px] p-7 text-center sm:p-10 glass-panel">
+      <StorySilhouettes variant="rsvp" />
+      <Reveal className="relative z-10 mx-auto w-full max-w-2xl overflow-hidden rounded-[8px] p-7 text-center sm:p-10 glass-panel">
         {status === "success" &&
           fireflies.map((firefly) => (
             <span

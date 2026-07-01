@@ -3,6 +3,7 @@
 import { CalendarDays, Clock, MapPin, Route } from "lucide-react";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/sections/Reveal";
+import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 const details = [
   {
@@ -32,8 +33,9 @@ const mapsUrl =
 
 export function DetailsSection() {
   return (
-    <section className="relative px-5 py-24">
-      <div className="mx-auto max-w-5xl">
+    <section className="relative overflow-hidden px-5 py-24">
+      <StorySilhouettes variant="details" />
+      <div className="relative z-10 mx-auto max-w-5xl">
         <Reveal className="text-center">
           <p className="mb-3 text-xs font-medium uppercase tracking-[0.24em] text-gold">
             Detalhes

@@ -1,11 +1,13 @@
 "use client";
 
 import { Reveal } from "@/components/sections/Reveal";
+import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 export function WelcomeStory() {
   return (
-    <section className="relative flex min-h-[92svh] items-center px-5 py-20">
-      <Reveal className="mx-auto w-full max-w-2xl rounded-[8px] p-7 text-center sm:p-10 glass-panel">
+    <section className="relative flex min-h-[92svh] items-center overflow-hidden px-5 py-20">
+      <StorySilhouettes variant="story" />
+      <Reveal className="relative z-10 mx-auto w-full max-w-2xl rounded-[8px] p-7 text-center sm:p-10 glass-panel">
         <p className="soft-text mx-auto max-w-xl text-lg font-light leading-9 text-cream/92 sm:text-xl">
           Há histórias que começam com um &quot;Era uma vez&quot;...
         </p>

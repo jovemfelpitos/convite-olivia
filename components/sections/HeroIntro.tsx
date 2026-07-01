@@ -2,6 +2,7 @@
 
 import { ChevronDown, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 type HeroIntroProps = {
   ready: boolean;
@@ -9,12 +10,13 @@ type HeroIntroProps = {
 
 export function HeroIntro({ ready }: HeroIntroProps) {
   return (
-    <section className="relative flex min-h-[100svh] items-center justify-center px-5 py-16 text-center">
+    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden px-5 py-16 text-center">
       <motion.div
         className="absolute inset-0 z-0 bg-[#07150f]"
         animate={{ opacity: ready ? 0 : 1 }}
         transition={{ duration: 2.4, ease: "easeInOut" }}
       />
+      <StorySilhouettes variant="hero" />
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 18, filter: "blur(12px)" }}

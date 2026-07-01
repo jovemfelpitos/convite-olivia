@@ -3,11 +3,13 @@
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { Reveal } from "@/components/sections/Reveal";
+import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 export function InvitationSection() {
   return (
     <section className="relative min-h-[96svh] overflow-hidden px-5 py-24">
-      <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[1.04fr_0.96fr]">
+      <StorySilhouettes variant="invitation" />
+      <div className="relative z-10 mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-[1.04fr_0.96fr]">
         <Reveal>
           <div className="max-w-xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-gold/35 bg-cream/10 px-4 py-2 text-xs uppercase tracking-[0.18em] text-cream/88">

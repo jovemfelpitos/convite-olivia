@@ -246,6 +246,141 @@ input {
   opacity: 0.82;
 }
 
+.story-silhouettes {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.story-silhouette {
+  position: absolute;
+  width: var(--silhouette-size, 9rem);
+  transform-origin: center;
+  mix-blend-mode: screen;
+}
+
+.story-silhouette svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  opacity: var(--silhouette-opacity, 0.22);
+  filter:
+    drop-shadow(0 0 0.65rem rgba(199, 165, 91, 0.2))
+    drop-shadow(0 0 1.35rem rgba(138, 167, 122, 0.12));
+}
+
+.silhouette-fill.forest {
+  fill: rgba(41, 77, 57, 0.78);
+}
+
+.silhouette-fill.sage {
+  fill: rgba(138, 167, 122, 0.52);
+}
+
+.silhouette-fill.gold {
+  fill: rgba(199, 165, 91, 0.72);
+}
+
+.silhouette-line {
+  fill: none;
+  stroke: rgba(199, 165, 91, 0.7);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+}
+
+.silhouette-line.scrollwork {
+  stroke-width: 4;
+  opacity: 0.82;
+}
+
+.silhouette-line.trail {
+  stroke-dasharray: 7 11;
+  stroke-width: 3;
+}
+
+.hero-frog {
+  --silhouette-size: clamp(6.8rem, 31vw, 11rem);
+  --silhouette-opacity: 0.2;
+  left: 50%;
+  bottom: 14%;
+  translate: -50% 0;
+}
+
+.hero-gown {
+  --silhouette-size: clamp(5.8rem, 19vw, 10rem);
+  --silhouette-opacity: 0.18;
+  left: 5%;
+  top: 31%;
+}
+
+.hero-musician {
+  --silhouette-size: clamp(7rem, 21vw, 12rem);
+  --silhouette-opacity: 0.16;
+  right: 4%;
+  top: 35%;
+}
+
+.hero-scrollwork {
+  --silhouette-size: clamp(12rem, 32vw, 19rem);
+  --silhouette-opacity: 0.12;
+  right: -3rem;
+  top: 12%;
+}
+
+.story-balcony {
+  --silhouette-size: clamp(13rem, 42vw, 23rem);
+  --silhouette-opacity: 0.12;
+  left: -5rem;
+  top: 8%;
+}
+
+.story-firefly {
+  --silhouette-size: clamp(7rem, 26vw, 11rem);
+  --silhouette-opacity: 0.22;
+  right: 6%;
+  bottom: 15%;
+}
+
+.invite-alligator {
+  --silhouette-size: clamp(12rem, 43vw, 23rem);
+  --silhouette-opacity: 0.14;
+  right: -2rem;
+  bottom: 6%;
+}
+
+.invite-firefly {
+  --silhouette-size: clamp(7rem, 24vw, 12rem);
+  --silhouette-opacity: 0.2;
+  left: 2%;
+  top: 4%;
+}
+
+.details-musician {
+  --silhouette-size: clamp(8rem, 28vw, 15rem);
+  --silhouette-opacity: 0.13;
+  left: -2rem;
+  top: 6%;
+}
+
+.details-scrollwork {
+  --silhouette-size: clamp(15rem, 48vw, 28rem);
+  --silhouette-opacity: 0.1;
+  right: -7rem;
+  bottom: 2%;
+}
+
+.rsvp-frog {
+  --silhouette-size: clamp(7rem, 29vw, 12rem);
+  --silhouette-opacity: 0.13;
+  left: 50%;
+  bottom: 7%;
+  translate: -50% 0;
+}
+
 @keyframes scenic-drift {
   from {
     transform: scale(1.04) translate3d(-0.5%, -0.2%, 0);
@@ -358,5 +493,45 @@ input {
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-silhouette svg {
+    opacity: calc(var(--silhouette-opacity, 0.2) * 0.82);
+  }
+
+  .hero-gown {
+    left: -1.6rem;
+    top: 22%;
+  }
+
+  .hero-musician {
+    right: -2.8rem;
+    top: 44%;
+  }
+
+  .hero-scrollwork {
+    right: -8rem;
+    top: 6%;
+  }
+
+  .hero-frog {
+    bottom: 18%;
+  }
+
+  .story-balcony,
+  .details-scrollwork {
+    display: none;
+  }
+
+  .invite-alligator {
+    right: -7rem;
+    bottom: 1%;
+  }
+
+  .details-musician {
+    left: -4rem;
+    top: 2%;
   }
 }
