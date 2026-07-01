@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Sparkles } from "lucide-react";
 import { Reveal } from "@/components/sections/Reveal";
 import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
@@ -30,28 +31,22 @@ export function InvitationSection() {
         </Reveal>
 
         <Reveal delay={0.14}>
-          <div className="relative mx-auto h-[22rem] w-full max-w-sm">
+          <div className="relative mx-auto h-[20rem] w-full max-w-xl sm:h-[24rem] md:h-[26rem]">
             <motion.div
-              className="lily-pad left-[8%] top-[56%] h-20 w-36"
-              style={{ "--rotate": "-15deg" } as React.CSSProperties}
-              animate={{ y: [0, -8, 0], rotate: [-15, -11, -15] }}
-              transition={{ duration: 5.8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <motion.div
-              className="lily-pad right-[4%] top-[38%] h-16 w-28"
-              style={{ "--rotate": "18deg" } as React.CSSProperties}
-              animate={{ y: [0, 6, 0], rotate: [18, 14, 18] }}
-              transition={{ duration: 6.4, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <span className="flower-mark left-[18%] top-[49%]" />
-            <span className="flower-mark right-[20%] top-[34%]" />
-            <motion.div
-              className="frog-silhouette absolute left-1/2 top-[48%] -translate-x-1/2"
-              animate={{ y: [0, -7, 0] }}
-              transition={{ duration: 4.8, repeat: Infinity, ease: "easeInOut" }}
-            />
-            <div className="absolute inset-x-2 bottom-10 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
-            <div className="absolute inset-x-8 bottom-7 h-px bg-gradient-to-r from-transparent via-cream/20 to-transparent" />
+              className="real-frog-scene"
+              animate={{ y: [0, -8, 0], scale: [1, 1.015, 1] }}
+              transition={{ duration: 7.2, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <Image
+                alt="Sapinho encantado entre flores de vitoria-regia"
+                draggable={false}
+                height={1024}
+                sizes="(max-width: 768px) 92vw, 38rem"
+                src="/images/sapinho.png"
+                unoptimized
+                width={1536}
+              />
+            </motion.div>
           </div>
         </Reveal>
       </div>
