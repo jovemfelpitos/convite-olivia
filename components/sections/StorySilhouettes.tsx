@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import type { ReactNode } from "react";
 
 type StorySilhouettesProps = {
@@ -98,13 +99,17 @@ function BalconyScrollwork() {
 
 function FireflyTrail() {
   return (
-    <svg viewBox="0 0 170 170" role="img">
-      <path className="silhouette-line trail" d="M19 126c43-64 78 5 118-73" />
-      <path className="silhouette-fill gold" d="M126 43c8-6 19-2 20 8 1 9-8 17-17 13-8-3-10-15-3-21Z" />
-      <path className="silhouette-fill sage" d="M115 34c12 2 20 9 23 21-15-7-25-11-23-21Z" />
-      <path className="silhouette-fill sage" d="M139 55c11-3 19 1 25 11-14 1-23-2-25-11Z" />
-      <path className="silhouette-fill gold" d="M33 118c4 0 7 3 7 7s-3 7-7 7-7-3-7-7 3-7 7-7ZM73 102c3 0 6 3 6 6s-3 6-6 6-6-3-6-6 3-6 6-6Z" />
-    </svg>
+    <div className="real-firefly-scene">
+      <Image
+        alt=""
+        draggable={false}
+        height={1024}
+        sizes="(max-width: 768px) 72vw, 25rem"
+        src="/images/vagalumes.png"
+        unoptimized
+        width={1536}
+      />
+    </div>
   );
 }
 

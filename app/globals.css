@@ -279,6 +279,50 @@ input {
     drop-shadow(0 0 1.35rem rgba(138, 167, 122, 0.12));
 }
 
+.real-firefly-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  transform: rotate(var(--firefly-rotate, 0deg));
+  isolation: isolate;
+}
+
+.real-firefly-scene::before {
+  content: "";
+  position: absolute;
+  inset: 14% 9% 20%;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 76% 42%, rgba(255, 224, 91, 0.44), transparent 27%),
+    radial-gradient(ellipse at 54% 58%, rgba(199, 165, 91, 0.25), transparent 64%);
+  filter: blur(16px);
+  opacity: 0.94;
+}
+
+.real-firefly-scene img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+  mix-blend-mode: screen;
+  filter:
+    saturate(0.96)
+    brightness(0.96)
+    contrast(1.04)
+    drop-shadow(0 0 0.9rem rgba(255, 224, 91, 0.34))
+    drop-shadow(0 0.8rem 2rem rgba(7, 21, 15, 0.36));
+  -webkit-mask-image:
+    radial-gradient(ellipse at 70% 43%, #000 0 32%, rgba(0, 0, 0, 0.92) 46%, transparent 74%),
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.8) 15%, #000 43%, #000 86%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse at 70% 43%, #000 0 32%, rgba(0, 0, 0, 0.92) 46%, transparent 74%),
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.8) 15%, #000 43%, #000 86%, transparent 100%);
+  mask-composite: intersect;
+}
+
 .silhouette-fill.forest {
   fill: rgba(41, 77, 57, 0.78);
 }
@@ -346,10 +390,10 @@ input {
 }
 
 .story-firefly {
-  --silhouette-size: clamp(7rem, 26vw, 11rem);
-  --silhouette-opacity: 0.22;
-  right: 6%;
-  bottom: 15%;
+  --silhouette-size: clamp(18rem, 36vw, 31rem);
+  --firefly-rotate: -8deg;
+  right: -4rem;
+  top: 12%;
 }
 
 .invite-alligator {
@@ -360,10 +404,10 @@ input {
 }
 
 .invite-firefly {
-  --silhouette-size: clamp(7rem, 24vw, 12rem);
-  --silhouette-opacity: 0.2;
-  left: 2%;
-  top: 4%;
+  --silhouette-size: clamp(18rem, 42vw, 32rem);
+  --firefly-rotate: 0deg;
+  left: 13%;
+  top: 2%;
 }
 
 .details-musician {
