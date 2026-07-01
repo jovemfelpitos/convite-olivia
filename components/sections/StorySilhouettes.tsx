@@ -32,17 +32,19 @@ function Silhouette({ className, delay = 0, children }: SilhouetteProps) {
   );
 }
 
-function CrownedFrog() {
+function PrincessFrog() {
   return (
-    <svg viewBox="0 0 180 130" role="img">
-      <path className="silhouette-fill sage" d="M25 88c27-22 88-23 129 0-29 17-94 20-129 0Z" />
-      <path className="silhouette-fill forest" d="M62 64c4-24 20-36 43-33 21 3 35 18 34 42-1 22-19 34-40 34-23 0-41-15-37-43Z" />
-      <path className="silhouette-fill forest" d="M43 67c5-20 19-27 35-19 9 5 10 18 2 27-11 13-31 7-37-8Z" />
-      <path className="silhouette-fill forest" d="M122 50c16-9 31-3 36 17-6 15-26 21-37 8-8-9-8-21 1-25Z" />
-      <path className="silhouette-fill gold" d="M82 30 90 9l12 18 14-16 2 25c-13-5-24-5-36-6Z" />
-      <path className="silhouette-line" d="M55 92c26 11 65 10 93-1" />
-      <path className="silhouette-line" d="M80 72c13 10 29 10 43 0" />
-    </svg>
+    <div className="real-princess-frog-scene">
+      <Image
+        alt=""
+        draggable={false}
+        height={1024}
+        sizes="(max-width: 768px) 46vw, 15rem"
+        src="/images/sapinha.png"
+        unoptimized
+        width={1536}
+      />
+    </div>
   );
 }
 
@@ -119,7 +121,7 @@ export function StorySilhouettes({ variant }: StorySilhouettesProps) {
       {variant === "hero" && (
         <>
           <Silhouette className="hero-frog" delay={3.15}>
-            <CrownedFrog />
+            <PrincessFrog />
           </Silhouette>
           <Silhouette className="hero-gown" delay={3.45}>
             <GownFigure />
@@ -168,7 +170,7 @@ export function StorySilhouettes({ variant }: StorySilhouettesProps) {
 
       {variant === "rsvp" && (
         <Silhouette className="rsvp-frog" delay={0.18}>
-          <CrownedFrog />
+          <PrincessFrog />
         </Silhouette>
       )}
     </div>
