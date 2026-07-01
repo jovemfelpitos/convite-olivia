@@ -1,21 +1,12 @@
 "use client";
 
-import { CalendarDays, Clock, MapPin, Route } from "lucide-react";
+import Image from "next/image";
+import { MapPin, Route } from "lucide-react";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/sections/Reveal";
 import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
-const details = [
-  {
-    icon: CalendarDays,
-    label: "Data",
-    value: "04 de Julho de 2026"
-  },
-  {
-    icon: Clock,
-    label: "Horário",
-    value: "20:00"
-  },
+const locationDetails = [
   {
     icon: MapPin,
     label: "Local",
@@ -46,12 +37,35 @@ export function DetailsSection() {
           <div className="gold-line mx-auto my-7" />
         </Reveal>
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {details.map((detail, index) => {
+        <Reveal className="date-time-scene-wrap mt-10" delay={0.08}>
+          <motion.div
+            className="date-time-scene"
+            initial={{ opacity: 0.92 }}
+            whileHover={{ y: -3, scale: 1.006 }}
+            transition={{ duration: 0.35 }}
+          >
+            <span className="sr-only">
+              Data: 04 de Julho de 2026. Horário: 20:00.
+            </span>
+            <Image
+              alt=""
+              className="date-time-scene-image"
+              draggable={false}
+              height={1024}
+              sizes="(max-width: 768px) 94vw, 52rem"
+              src="/images/date-time-scene.png"
+              unoptimized
+              width={1536}
+            />
+          </motion.div>
+        </Reveal>
+
+        <div className="mt-7 grid gap-4 sm:grid-cols-2">
+          {locationDetails.map((detail, index) => {
             const Icon = detail.icon;
 
             return (
-              <Reveal delay={index * 0.08} key={detail.label}>
+              <Reveal delay={0.16 + index * 0.08} key={detail.label}>
                 <motion.div
                   className="detail-card flex h-full items-start gap-4 rounded-[8px] p-5 glass-panel"
                   whileHover={{ y: -4, borderColor: "rgba(199, 165, 91, 0.72)" }}

@@ -223,6 +223,58 @@ input {
   object-fit: contain;
 }
 
+.date-time-scene-wrap {
+  width: min(94vw, 52rem);
+  margin-inline: auto;
+  filter:
+    drop-shadow(0 0 1.1rem rgba(199, 165, 91, 0.16))
+    drop-shadow(0 1.2rem 2.8rem rgba(7, 21, 15, 0.5));
+}
+
+.date-time-scene {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(199, 165, 91, 0.42);
+  border-radius: 8px;
+  background:
+    radial-gradient(ellipse at 52% 58%, rgba(199, 165, 91, 0.14), transparent 65%),
+    rgba(7, 21, 15, 0.62);
+  isolation: isolate;
+}
+
+.date-time-scene::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 49% 54%, transparent 0 45%, rgba(7, 21, 15, 0.2) 74%, rgba(7, 21, 15, 0.7) 100%),
+    linear-gradient(180deg, rgba(7, 21, 15, 0.18), rgba(7, 21, 15, 0.06) 42%, rgba(7, 21, 15, 0.34));
+}
+
+.date-time-scene::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: auto 6% 4%;
+  z-index: 2;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(199, 165, 91, 0.52), transparent);
+  opacity: 0.78;
+}
+
+.date-time-scene-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter:
+    saturate(0.88)
+    brightness(0.84)
+    contrast(1.04);
+}
+
 .detail-card {
   min-height: 7.5rem;
 }
@@ -628,6 +680,16 @@ input {
 
   .story-card-art-wrap {
     width: min(95vw, 65svh);
+  }
+
+  .date-time-scene-wrap {
+    width: min(96vw, 35rem);
+  }
+
+  .date-time-scene-image {
+    min-height: 17rem;
+    object-fit: cover;
+    object-position: center;
   }
 
   .story-silhouette svg {

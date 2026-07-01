@@ -9,7 +9,9 @@ export async function sendRsvp(payload: RsvpPayload) {
   const body = JSON.stringify({
     ...payload,
     event: "Olivia's Birthday",
-    confirmedAt: new Date().toISOString()
+    confirmedAt: new Date().toISOString(),
+    source: "site",
+    userAgent: typeof window === "undefined" ? "" : window.navigator.userAgent
   });
 
   if (!endpoint) {
