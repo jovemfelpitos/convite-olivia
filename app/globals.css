@@ -323,47 +323,39 @@ input {
   mask-composite: intersect;
 }
 
-.real-princess-frog-scene {
+.real-princess-silhouette-scene {
   position: relative;
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 728 / 858;
   isolation: isolate;
 }
 
-.real-princess-frog-scene::before {
+.real-princess-silhouette-scene::before {
   content: "";
   position: absolute;
-  inset: 13% 18% 10%;
+  inset: 16% 6% 9%;
   border-radius: 999px;
   background:
-    radial-gradient(circle at 52% 35%, rgba(255, 224, 91, 0.26), transparent 31%),
-    radial-gradient(ellipse at 50% 58%, rgba(138, 167, 122, 0.2), transparent 66%);
-  filter: blur(16px);
-  opacity: 0.86;
+    radial-gradient(circle at 31% 37%, rgba(255, 224, 91, 0.18), transparent 27%),
+    radial-gradient(ellipse at 55% 54%, rgba(199, 165, 91, 0.18), transparent 67%);
+  filter: blur(18px);
+  opacity: 0.76;
 }
 
-.real-princess-frog-scene img {
+.real-princess-silhouette-scene img {
   position: relative;
   z-index: 1;
   display: block;
   width: 100%;
   height: auto;
-  opacity: 0.96;
+  opacity: 0.58;
   mix-blend-mode: screen;
   filter:
-    saturate(0.94)
-    brightness(0.94)
-    contrast(1.02)
-    drop-shadow(0 0 1rem rgba(199, 165, 91, 0.28))
-    drop-shadow(0 0.9rem 1.8rem rgba(7, 21, 15, 0.42));
-  -webkit-mask-image:
-    radial-gradient(ellipse at 50% 50%, #000 0 34%, rgba(0, 0, 0, 0.94) 48%, transparent 74%),
-    linear-gradient(180deg, transparent 0%, #000 17%, #000 79%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    radial-gradient(ellipse at 50% 50%, #000 0 34%, rgba(0, 0, 0, 0.94) 48%, transparent 74%),
-    linear-gradient(180deg, transparent 0%, #000 17%, #000 79%, transparent 100%);
-  mask-composite: intersect;
+    sepia(0.18)
+    saturate(0.85)
+    brightness(0.88)
+    drop-shadow(0 0 0.85rem rgba(199, 165, 91, 0.2))
+    drop-shadow(0 1rem 2rem rgba(7, 21, 15, 0.5));
 }
 
 .silhouette-fill.forest {
@@ -397,9 +389,9 @@ input {
 }
 
 .hero-frog {
-  --silhouette-size: clamp(17rem, 34vw, 22rem);
+  --silhouette-size: clamp(10.5rem, 26vw, 15rem);
   left: 50%;
-  bottom: 7%;
+  bottom: 2%;
   translate: -50% 0;
 }
 
@@ -467,10 +459,9 @@ input {
 }
 
 .rsvp-frog {
-  --silhouette-size: clamp(14rem, 31vw, 19rem);
-  left: 50%;
-  bottom: 3%;
-  translate: -50% 0;
+  --silhouette-size: clamp(7.8rem, 22vw, 12rem);
+  right: 8%;
+  bottom: 2%;
 }
 
 @keyframes scenic-drift {
