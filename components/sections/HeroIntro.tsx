@@ -2,6 +2,7 @@
 
 import { ChevronDown, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { StorySilhouettes } from "@/components/sections/StorySilhouettes";
 
 type HeroIntroProps = {
@@ -32,10 +33,19 @@ export function HeroIntro({ ready }: HeroIntroProps) {
           initial={{ opacity: 0, y: 28, filter: "blur(16px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1.4, delay: 2.25, ease: [0.22, 1, 0.36, 1] }}
-          className="title-script w-full max-w-[21rem] text-[3.8rem] font-semibold leading-[0.9] text-ivory drop-shadow-[0_0_24px_rgba(199,165,91,0.22)] sm:max-w-none sm:text-8xl"
+          className="hero-logo-title"
         >
-          Olivia&apos;s
-          <span className="mt-2 block text-[2.95rem] text-cream sm:text-7xl">Birthday</span>
+          <span className="sr-only">Olivia&apos;s Birthday</span>
+          <Image
+            alt=""
+            draggable={false}
+            height={853}
+            priority
+            sizes="(max-width: 768px) 92vw, 44rem"
+            src="/images/title-logo.png"
+            unoptimized
+            width={1438}
+          />
         </motion.h1>
         <motion.div
           initial={{ scaleX: 0, opacity: 0 }}

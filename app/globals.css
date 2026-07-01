@@ -190,6 +190,23 @@ input {
   text-wrap: balance;
 }
 
+.hero-logo-title {
+  position: relative;
+  width: min(92vw, 44rem);
+  max-width: 100%;
+  margin-inline: auto;
+  filter:
+    drop-shadow(0 0 0.8rem rgba(255, 224, 91, 0.22))
+    drop-shadow(0 1.2rem 2.2rem rgba(7, 21, 15, 0.58));
+}
+
+.hero-logo-title img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 .detail-card {
   min-height: 7.5rem;
 }
@@ -589,6 +606,10 @@ input {
 }
 
 @media (max-width: 640px) {
+  .hero-logo-title {
+    width: min(94vw, 22.5rem);
+  }
+
   .story-silhouette svg {
     opacity: calc(var(--silhouette-opacity, 0.2) * 0.82);
   }
