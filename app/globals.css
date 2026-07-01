@@ -208,7 +208,7 @@ input {
 }
 
 .story-card-art-wrap {
-  width: min(94vw, 42rem, 68svh);
+  width: min(94vw, 42rem, 70svh);
   filter:
     drop-shadow(0 0 1.1rem rgba(199, 165, 91, 0.2))
     drop-shadow(0 1.2rem 2.8rem rgba(7, 21, 15, 0.56));
@@ -231,10 +231,11 @@ input {
 
 .date-time-scene {
   position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse at 52% 58%, rgba(199, 165, 91, 0.14), transparent 65%),
-    rgba(7, 21, 15, 0.62);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: visible;
+  background: transparent;
   isolation: isolate;
 }
 
@@ -242,11 +243,13 @@ input {
   content: "";
   pointer-events: none;
   position: absolute;
-  inset: 0;
-  z-index: 1;
+  inset: 4% -7% 24%;
+  z-index: -1;
   background:
-    radial-gradient(ellipse at 49% 54%, transparent 0 45%, rgba(7, 21, 15, 0.2) 74%, rgba(7, 21, 15, 0.7) 100%),
-    linear-gradient(180deg, rgba(7, 21, 15, 0.18), rgba(7, 21, 15, 0.06) 42%, rgba(7, 21, 15, 0.34));
+    radial-gradient(ellipse at center, rgba(7, 21, 15, 0.62), rgba(7, 21, 15, 0.28) 56%, transparent 74%),
+    radial-gradient(ellipse at 58% 58%, rgba(199, 165, 91, 0.12), transparent 64%);
+  filter: blur(18px);
+  opacity: 0.78;
 }
 
 .date-time-scene-image {
@@ -258,6 +261,22 @@ input {
     saturate(0.88)
     brightness(0.84)
     contrast(1.04);
+  -webkit-mask-image:
+    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 7%, #000 88%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(90deg, transparent 0%, #000 9%, #000 91%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, #000 7%, #000 88%, transparent 100%);
+  mask-composite: intersect;
+}
+
+.date-time-copy {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 48rem);
+  margin-top: 1.25rem;
+  text-align: center;
 }
 
 .venue-address {
@@ -266,6 +285,36 @@ input {
   text-shadow:
     0 0 1rem rgba(199, 165, 91, 0.2),
     0 1rem 2.3rem rgba(7, 21, 15, 0.72);
+}
+
+.detail-gold-cord {
+  position: relative;
+  display: block;
+  width: min(16rem, 58vw);
+  height: 1px;
+  margin: 0 auto 1.1rem;
+  background: linear-gradient(90deg, transparent, rgba(199, 165, 91, 0.9), transparent);
+}
+
+.detail-gold-cord::before,
+.detail-gold-cord::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 0.35rem;
+  height: 0.35rem;
+  border: 1px solid rgba(199, 165, 91, 0.86);
+  border-radius: 999px;
+  background: rgba(199, 165, 91, 0.22);
+  transform: translateY(-50%);
+}
+
+.detail-gold-cord::before {
+  left: 42%;
+}
+
+.detail-gold-cord::after {
+  right: 42%;
 }
 
 .detail-card {
@@ -629,17 +678,21 @@ input {
   }
 
   .story-card-art-wrap {
-    width: min(95vw, 65svh);
+    width: min(96vw, 68svh);
   }
 
   .date-time-scene-wrap {
-    width: min(77vw, 28rem);
+    width: min(84vw, 28rem);
   }
 
   .date-time-scene-image {
-    min-height: 13.6rem;
+    min-height: 13.2rem;
     object-fit: cover;
     object-position: center;
+  }
+
+  .date-time-copy {
+    margin-top: 0.85rem;
   }
 
   .story-silhouette svg {

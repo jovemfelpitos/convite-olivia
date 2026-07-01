@@ -44,13 +44,13 @@ export function DetailsSection() {
               unoptimized
               width={1536}
             />
+            <div className="date-time-copy">
+              <span aria-hidden className="detail-gold-cord" />
+              <h3 className="venue-address title-script soft-text text-2xl leading-tight text-ivory sm:text-4xl">
+                Rua Joaquim da Silva Frade, 128 - Parque Renato Maia, Guarulhos
+              </h3>
+            </div>
           </motion.div>
-        </Reveal>
-
-        <Reveal className="mt-7 text-center" delay={0.16}>
-          <h3 className="venue-address title-script soft-text text-2xl leading-tight text-ivory sm:text-4xl">
-            Rua Joaquim da Silva Frade, 128 - Parque Renato Maia, Guarulhos
-          </h3>
         </Reveal>
 
         <Reveal className="mt-8 flex justify-center" delay={0.18}>
