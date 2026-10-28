@@ -1,19 +1,43 @@
 # Convite Olivia
 
-Landing page interativa em Next.js para o aniversário de 19 anos da Olivia.
+Convite web com direção visual, animações e confirmação de presença.
 
-## Rodar localmente
+**Next.js · TypeScript · Tailwind CSS · Framer Motion**
+
+**Estado:** interface implementada. O envio de RSVP depende da configuração de um endpoint próprio.
+
+![Convite Olivia — desktop](docs/images/desktop.jpg)
+
+Capturas reais da página inicial em execução local, sem nomes ou respostas de convidados. O formulário não foi enviado durante as capturas.
+
+<details>
+<summary>Ver no celular</summary>
+
+Captura da interface no celular.
+
+<img src="docs/images/mobile.jpg" alt="Convite Olivia — celular" width="320">
+
+</details>
+
+## O que demonstra
+
+- Composição visual adaptada para desktop e celular.
+- Animações e efeitos de entrada.
+- Áudio ativado por interação do visitante.
+- Formulário com integração configurável para confirmação de presença.
+
+## Executar localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
+Abra `http://localhost:3000`. Para o build, execute `npm run build`.
+
 ## RSVP com Google Sheets
 
-Planilha criada para receber as confirmacoes:
-
-[Confirmacoes - Olivia Birthday](https://docs.google.com/spreadsheets/d/1FBQwE8UUHYtY2ogbz3bSOpqaHHQAKSfiXa813jebu30/edit)
+Use uma planilha própria para receber as confirmações. O link de uma planilha de convidados não faz parte desta apresentação.
 
 Para ligar o formulario do site na planilha:
 
